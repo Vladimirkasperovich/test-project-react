@@ -1,0 +1,16 @@
+.main {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background-color: dodgerblue;
+  cursor: pointer;
+  margin-bottom: 1px;
+
+  .info {
+    font-size: 24px;
+    font-weight: 400;
+    color: white;
+    line-height: 1.6px;
+    margin-left: 50px;
+  }
+}
