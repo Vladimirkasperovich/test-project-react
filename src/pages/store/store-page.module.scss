@@ -1,3 +1,9 @@
 .main {
-  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 20px;
+  border: 2px solid red;
+  width: 100%;
 }

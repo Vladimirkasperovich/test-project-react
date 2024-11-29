@@ -1,2 +1,19 @@
 .main {
+  border: 2px solid black;
+  max-width: 250px;
+  max-height: 200px;
+  .block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .product__title {
+    }
+    .product__image {
+      max-width: 100px;
+    }
+    .product__description {
+    }
+    .product__price {
+    }
+  }
 }
