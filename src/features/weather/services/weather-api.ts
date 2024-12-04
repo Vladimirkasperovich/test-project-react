@@ -1,6 +1,6 @@
-import { GeoZone, WeatherResponse } from '../types/weather.types.ts'
-import { geoInstance } from './geo-instance.ts'
-import { weatherInstance } from './weather-instance.ts'
+import { GeoZone, WeatherResponse } from '../types/weather.types'
+import { geoInstance } from './geo-instance'
+import { weatherInstance } from './weather-instance'
 
 class WeatherApi {
   private async userCoordinates(): Promise<GeoZone> {
