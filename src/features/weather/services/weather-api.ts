@@ -1,10 +1,24 @@
-import { GeoZone } from '../types/weather.types.ts'
+import { GeoZone, WeatherResponse } from '../types/weather.types.ts'
 import { geoInstance } from './geo-instance.ts'
+import { weatherInstance } from './weather-instance.ts'
 
 class WeatherApi {
-  private async getMyLocation(): Promise<GeoZone> {
+  private async userCoordinates(): Promise<GeoZone> {
     return (await geoInstance.get<GeoZone>('')).data
   }
-  public getGeoLocation = this.getMyLocation
+
+  private async currentWeather(payload: { lat: string; lon: string }): Promise<WeatherResponse> {
+    const { lat, lon } = payload
+    return (
+      await weatherInstance.get<WeatherResponse>(
+        `weather?lat=${lat}&lon=${lon}&appid=${import.meta.env.VITE_WEATHER_API_KEY}`,
+      )
+    ).data
+  }
+
+  public getUserCoordinates = this.userCoordinates
+  public getCurrentWeather = this.currentWeather
 }
+
 export const weatherService = new WeatherApi()
+// appid: 15c9a33acfa3d9f1a6a03e80b65d6dcd
