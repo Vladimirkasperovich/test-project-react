@@ -7,7 +7,7 @@ export const WeatherDisplay = () => {
   if (loading && !weatherData && !clientGeoData) {
     return <h1>...Loading</h1>
   }
-  console.log(weatherData)
+
   return (
     <div className={styles.main}>
       <div className={styles.block}>

@@ -16,15 +16,34 @@ a {
   color: inherit;
 }
 
-body {
+body.light {
   font-family: 'Kanit', sans-serif;
   font-weight: 700;
   font-style: italic;
   line-height: 1.5;
-  background-color: #fff;
-  color: #000;
+  --header-background-color: dodgerblue;
+  --header-text-color: white;
+  --sidebar-background-color: dodgerblue;
+  --sidebar-text-color: white;
+  --content-background-color: white;
+  --content-text-color: black;
 }
 
+body.dark {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.5;
+  --header-background-color: #06193d;
+  --header-text-color: #c5c5c5;
+  --sidebar-background-color: #06193d;
+  --sidebar-text-color: #c5c5c5;
+  --content-background-color: #393939;
+  --content-text-color: #c5c5c5;
+}
+
+.light-theme {
+}
 table {
   border-collapse: collapse;
   border-spacing: 0;

@@ -4,5 +4,7 @@
   flex: 1;
   .container {
     display: flex;
+    background-color: var(--content-background-color);
+    color: var(--content-text-color);
   }
 }

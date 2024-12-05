@@ -1,16 +1,16 @@
-.main {
-  height: 70px;
+.light {
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: dodgerblue;
+  background-color: var(--header-background-color);
+  color: var(--header-text-color);
   cursor: pointer;
   margin-bottom: 1px;
 
   .info {
     font-size: 24px;
     font-weight: 400;
-    color: white;
     line-height: 1.6px;
     margin-left: 50px;
   }
