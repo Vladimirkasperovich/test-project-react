@@ -11,7 +11,7 @@ export const sidebarItems: SidebarItem[] = [
   },
   {
     id: 2,
-    link: '/second',
-    value: 'Second',
+    link: '/weather',
+    value: 'Weather',
   },
 ]

@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router'
 import { HomePage, StorePage } from '../../pages'
+import { WeatherDisplay } from '../../features/weather'
 
 export const Content = () => {
   return (
@@ -7,7 +8,7 @@ export const Content = () => {
       <Route path={'/'} element={<Navigate to={'/home'} />} />
       <Route path={'/home'} element={<HomePage />} />
       <Route path={'/store'} element={<StorePage />} />
-      <Route path={'/second'} element={<h1>Second</h1>} />
+      <Route path={'/weather'} element={<WeatherDisplay />} />
     </Routes>
   )
 }

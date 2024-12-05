@@ -7,11 +7,14 @@ class WeatherApi {
     return (await geoInstance.get<GeoZone>('')).data
   }
 
-  private async currentWeather(payload: { lat: string; lon: string }): Promise<WeatherResponse> {
-    const { lat, lon } = payload
+  private async currentWeather(payload: {
+    latitude: string
+    longitude: string
+  }): Promise<WeatherResponse> {
+    const { latitude, longitude } = payload
     return (
       await weatherInstance.get<WeatherResponse>(
-        `weather?lat=${lat}&lon=${lon}&appid=${import.meta.env.VITE_WEATHER_API_KEY}`,
+        `weather?lat=${latitude}&lon=${longitude}&appid=${import.meta.env.VITE_WEATHER_API_KEY}`,
       )
     ).data
   }
@@ -21,4 +24,3 @@ class WeatherApi {
 }
 
 export const weatherService = new WeatherApi()
-// appid: 15c9a33acfa3d9f1a6a03e80b65d6dcd

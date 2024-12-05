@@ -1,15 +1,18 @@
 import { useEffect, useState } from 'react'
-import { WeatherResponse } from '../types/weather.types.ts'
+import { GeoZone, WeatherResponse } from '../types/weather.types.ts'
 import { weatherService } from '../services/weather-api.ts'
 import { AxiosError } from 'axios'
 
 interface Props {
-  weatherData: WeatherResponse
+  weatherData: WeatherResponse | null
+  clientGeoData: GeoZone | null
   error: string
   loading: boolean
 }
+
 export const useGetCurrentWeather = (): Props => {
   const [weatherData, setWeatherData] = useState<WeatherResponse | null>(null)
+  const [clientGeoData, setClientGeoData] = useState<GeoZone | null>(null)
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
@@ -18,9 +21,10 @@ export const useGetCurrentWeather = (): Props => {
       try {
         setLoading(true)
         const coordinatesResponse = await weatherService.getUserCoordinates()
+        setClientGeoData(coordinatesResponse)
         const weatherResponse = await weatherService.getCurrentWeather({
-          lat: String(coordinatesResponse.lat),
-          lon: String(coordinatesResponse.lon),
+          latitude: String(coordinatesResponse.lat),
+          longitude: String(coordinatesResponse.lon),
         })
         setWeatherData(weatherResponse)
       } catch (error: unknown) {
@@ -33,5 +37,5 @@ export const useGetCurrentWeather = (): Props => {
     })()
   }, [])
 
-  return { weatherData: weatherData!, loading, error }
+  return { weatherData, clientGeoData, loading, error }
 }
