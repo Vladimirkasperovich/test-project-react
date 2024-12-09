@@ -1,7 +1,7 @@
 import { Link } from 'react-router'
 import { ThemeToggle } from '../theme-toggle/theme-toggle.tsx'
 import { useContext } from 'react'
-import { ThemeContext } from '../../app/context/theme-context'
+import { ThemeContext } from '../../app/index.ts'
 import styles from './header.module.scss'
 
 export const Header = () => {
