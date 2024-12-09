@@ -1,18 +1,17 @@
 import { FC, useState } from 'react'
+import { ThemeType } from '../../app/context/theme-context.ts'
 import styles from './theme-toggle.module.scss'
 
-type ModeTheme = 'light' | 'dark'
 interface Props {
-  onToggle: (theme: ModeTheme) => void
+  onToggle: (theme: ThemeType) => void
+  theme: ThemeType
 }
 
-export const ThemeToggle: FC<Props> = ({ onToggle }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false)
-
+export const ThemeToggle: FC<Props> = ({ onToggle, theme }) => {
+  const [isDarkMode, setIsDarkMode] = useState(theme !== 'light')
   const handleToggle = () => {
-    const newMode = !isDarkMode
-    setIsDarkMode(newMode)
-    onToggle(isDarkMode ? 'dark' : 'light')
+    setIsDarkMode((prevState) => !prevState)
+    onToggle(isDarkMode ? 'light' : 'dark')
   }
 
   return (
