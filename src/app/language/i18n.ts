@@ -14,6 +14,10 @@ const resources = {
         light: 'Light mode',
         dark: 'Dark mode',
       },
+      sidebarItems: {
+        store: 'store',
+        weather: 'weather',
+      },
     },
   },
   ru: {
@@ -27,6 +31,10 @@ const resources = {
       themeMode: {
         light: 'Светлая тема',
         dark: 'Темная тема',
+      },
+      sidebarItems: {
+        store: 'Магазин',
+        weather: 'Погода',
       },
     },
   },

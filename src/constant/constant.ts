@@ -7,11 +7,11 @@ export const sidebarItems: SidebarItem[] = [
   {
     id: 1,
     link: '/store',
-    value: 'Store',
+    value: 'store',
   },
   {
     id: 2,
     link: '/weather',
-    value: 'Weather',
+    value: 'weather',
   },
 ]
