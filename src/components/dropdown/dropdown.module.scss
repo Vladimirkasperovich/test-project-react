@@ -2,6 +2,7 @@
   position: relative;
   display: inline-block;
   font-family: 'Roboto', sans-serif;
+  max-height: 50px;
 
   .button {
     background: #fff;
@@ -15,6 +16,7 @@
     justify-content: space-between;
     width: 150px;
     color: #333;
+    max-height: 50px;
     transition: background-color 0.2s ease;
 
     &:hover {
