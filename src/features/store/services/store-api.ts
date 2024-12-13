@@ -5,12 +5,11 @@ class StoreService {
   private async getAllProduct(): Promise<Product[]> {
     return (await storeInstance.get<Product[]>('/products')).data
   }
-  private async getAllCategories(): Promise<CategoriesType[]> {
-    return (await storeInstance.get<CategoriesType[]>('/products/categories')).data
+  private async getAllProductByCategory(category: CategoriesType): Promise<Product[]> {
+    return (await storeInstance.get<Product[]>(`/products/category/${category}`)).data
   }
-
   public getProducts = this.getAllProduct
-  public getCategories = this.getAllCategories()
+  public getProductsByCategory = this.getAllProductByCategory
 }
 
 export const storeService = new StoreService()
