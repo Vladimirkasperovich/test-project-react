@@ -7,7 +7,8 @@ export const Content = () => {
     <Routes>
       <Route path={'/'} element={<Navigate to={'/home'} />} />
       <Route path={'/home'} element={<HomePage />} />
-      <Route path={'/store'} element={<StorePage />} />
+      <Route path={'/store'} element={<Navigate to={'/store/categories'} />} />
+      <Route path={'/store/categories'} element={<StorePage />} />
       <Route path={'/weather'} element={<WeatherDisplay />} />
     </Routes>
   )

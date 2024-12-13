@@ -1,0 +1,18 @@
+.list {
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  cursor: pointer;
+
+  .list_item {
+    font-size: 20px;
+    font-weight: lighter;
+    border: 1px solid white;
+    max-height: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    &:hover {
+      background: var(--header-background-color);
+    }
+  }
+}
