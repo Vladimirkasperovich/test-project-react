@@ -12,3 +12,5 @@ interface Rating {
   rate: number
   count: number
 }
+
+export type CategoriesType = 'electronics' | 'jewelery' | "men's clothing" | "women's clothing"
