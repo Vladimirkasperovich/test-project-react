@@ -23,6 +23,7 @@ export const WeatherDisplay = () => {
               <p>{data.main}</p>
             </div>
           ))}
+          <p>{Math.round((weatherData?.main.temp as number) - 273.15)}</p>
         </div>
       </div>
     </div>

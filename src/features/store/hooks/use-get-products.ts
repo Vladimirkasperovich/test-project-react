@@ -8,10 +8,12 @@ interface Props {
   loading: boolean
   error: string
 }
+
 export const useGetProducts = (): Props => {
   const [loading, setLoading] = useState<boolean>(false)
   const [products, setProducts] = useState<Product[]>([])
   const [error, setError] = useState<string>('')
+
   useEffect(() => {
     ;(async () => {
       try {
