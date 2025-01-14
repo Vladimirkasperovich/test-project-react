@@ -2,11 +2,11 @@ import styles from './weather-display.module.scss'
 import { useGetCurrentWeather } from '../../hooks/use-get-current-weather'
 
 export const WeatherDisplay = () => {
-  const { weatherData, loading, clientGeoData } = useGetCurrentWeather()
+  const { weatherData, clientGeoData } = useGetCurrentWeather()
 
-  if (loading && !weatherData && !clientGeoData) {
-    return <h1>...Loading</h1>
-  }
+  // if (loading && !weatherData && !clientGeoData) {
+  //   return <h1>...Loading</h1>
+  // }
 
   return (
     <div className={styles.main}>
